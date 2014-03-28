@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Bitcoin Price</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="jquery-1.10.2.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="info.js"></script>
+    <script src="fetchPrice.js"></script>
+    <style>
+      body {
+        min-width: 300px;
+        overflow-x: hidden;
+      }
+      .about p {
+        font-size: 10px;
+      }
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: http://developer.chrome.com/extensions/contentSecurityPolicy.html
+     -->
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    <ul class="nav nav-tabs">
+      <li id="btcTab"><a href="#btc" data-toggle="tab">比特币</a></li>
+      <li id="ltcTab"><a href="#ltc" data-toggle="tab">莱特币</a></li>
+      <li id="altTab"><a href="#altcoin" data-toggle="tab">竞争币</a></li>
+      <li><a href="#donate" data-toggle="tab">关于</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div class="tab-pane active" id="btc">
+        <table class="table table-hover table-condensed">
+          <thead>
+            <tr><th>平台</th><th>价格</th></tr>
+          </thead>     
+          <tbody>
+            <tr>
+              <td><a target="_blank" href="https://www.bitstamp.net/" onclick="chrome.tabs.create({url:this.href})">Bitstamp</a></td>
+              <td id="bitstamp_price">waiting</td>
+            </tr>
+            <tr>
+              <td><a target="_blank" href="https://796.com/invite/do/113741" onclick="chrome.tabs.create({url:this.href})">796期货</a></td>
+              <td id="796_price">waiting</td>
+            </tr>
+            <tr>
+              <td><a target="_blank" href="https://vip.btcchina.com/" onclick="chrome.tabs.create({url:this.href})">比特币中国</a></td>
+              <td id="btcchina_price">waiting</td>
+            </tr>
+            <tr>
+              <td><a target="_blank" href="http://www.okcoin.com/?invite=3157429" onclick="chrome.tabs.create({url:this.href})">OKCoin</a></td>
+              <td id="okcoin_price">waiting</td>
+            </tr>
+            <tr>
+              <td><a target="_blank" href="http://www.btctrade.com/" onclick="chrome.tabs.create({url:this.href})">BtcTrade</a></td>
+              <td id="btctrade_price">waiting</td>
+            </tr>
+            <tr>
+              <td><a target="_blank" href="https://www.huobi.com/" onclick="chrome.tabs.create({url:this.href})">火币网</a></td>
+              <td id="huobi_price">waiting</td>
+            </tr>
+            <tr>
+              <td><a target="_blank" href="https://www.fxbtc.com/" onclick="chrome.tabs.create({url:this.href})">FXBTC</a></td>
+              <td id="fxbtc_price">waiting</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tab-pane" id="ltc">
+        <table class="table table-hover table-condensed">
+          <thead>
+            <tr><th>平台</th><th>价格</th></tr>
+          </thead>     
+          <tbody>
+            <tr>
+              <td><a target="_blank" href="http://www.okcoin.com/?invite=3157429" onclick="chrome.tabs.create({url:this.href})">OKCoin</a></td>
+              <td id="okcoin_ltc">waiting</td>
+            </tr>
+            <tr>
+              <td><a target="_blank" href="https://www.fxbtc.com/" onclick="chrome.tabs.create({url:this.href})">FXBTC</a></td>
+              <td id="fxbtc_ltc">waiting</td>
+            </tr>
+            <tr>
+              <td><a target="_blank" href="http://www.btc38.com/" onclick="chrome.tabs.create({url:this.href})">比特时代</a></td>
+              <td id="btc38_ltc">waiting</td>
+            </tr>
+            <tr>
+              <td><a target="_blank" href="https://bter.com/ref/42625" onclick="chrome.tabs.create({url:this.href})">比特儿</a></td>
+              <td id="bter_ltc">waiting</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tab-pane" id="altcoin">
+        <table class="table table-hover table-condensed" id="altCoinTable">
+          <thead>
+            <tr>
+              <th>币种</th>
+              <th><a target="_blank" href="http://www.btc38.com" onclick="chrome.tabs.create({url:this.href})">比特时代</a></th>
+              <th><a target="_blank" href="https://bter.com/ref/42625" onclick="chrome.tabs.create({url:this.href})">比特儿</a></th>
+            </tr>
+          </thead>     
+        </table>
+        <!--span style="float:right"><a target="_blank" href="options.html" onclick="chrome.tabs.create({url:this.href})">更多...</a></span-->
+      </div>
+      <div class="tab-pane about" id="donate">
+        <div style="padding: 10px 20px;">
+        <h4><strong>版本</strong></h4>
+        <p>2.6</p>
+        <h4><strong>作者</strong></h4>
+        <p>邮箱：shaomxing@gmail.com<br>微博：<a target="_blank" href="http://weibo.com/uleone" onclick="chrome.tabs.create({url:this.href})">@霍顿</a></p>
+        <h4><strong>捐助</strong></h4>
+        <p>如果您觉得这款小工具对您有帮助，请支持原作者1mBTC：<br>
+        1CfCZsMdnma6MuGPSE4NqxuFaw6H16M2RH<br><br>
+        或通过下面的邀请链接注册交易平台：<br>
+        796交易所: <a target="_blank" href="https://796.com/invite/do/113741" onclick="chrome.tabs.create({url:this.href})">https://796.com/invite/do/113741</a> <br>
+        比特儿(被推荐用户享受半年内交易费9折优惠)： <a target="_blank" href="https://bter.com/signup/42625" onclick="chrome.tabs.create({url:this.href})">https://bter.com/signup/42625</a>
+        </p>
+        </div>
+      </div>
+    </div>
+
+
+  </body>
+</html>
+
