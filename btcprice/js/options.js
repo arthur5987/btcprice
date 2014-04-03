@@ -1,5 +1,6 @@
 var id=0;
 
+//保存提醒设置
 function saveOptions(){
 	//get rules from table
 	var rules={};
@@ -30,7 +31,7 @@ function saveOptions(){
 			$("#platform"+id).parent().addClass('has-error');
 		}
 		
-		var hexStrReg=/^\d+$/;
+		var hexStrReg=/^\d[.\d]*$/;
 		if(!hexStrReg.test(rule.onPrice)){
 			hasError = true;
 			$("#onPrice"+id).parent().addClass('has-error');

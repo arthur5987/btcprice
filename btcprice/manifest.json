@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "比特币行情",
   "description": "查询比特币莱特币和其他虚拟货币实时价格的小工具.",
-  "version": "2.6",
+  "version": "2.7",
   "icons": {
             "48": "img/icon48.png",
             "128": "img/icon.png" 
@@ -25,6 +25,7 @@
     "http://www.btcclubs.com/",
     "https://api.huobi.com/",
     "http://market.huobi.com/",
+    "https://market.huobi.com/",
     "http://api.796.com/",
     "https://data.fxbtc.com/",
     "http://www.btc38.com/",

@@ -63,7 +63,11 @@ function getPrice(rule){
 			} 
 			break;
 		case "btcchina":
-	    	getBtcPrice("https://data.btcchina.com/data/ticker",rule.platform,rule);
+			if (rule.coinName=="btc")
+		    	getBtcPrice("https://data.btcchina.com/data/ticker?market=btccny",rule.platform,rule);
+	    	else if(rule.coinName=="ltc"){
+				getLtcPrice("https://data.btcchina.com/data/ticker?market=ltccny",rule.platform,rule);
+			}
 			break;
 		case "okcoin":
 			if (rule.coinName=="btc") {
@@ -75,7 +79,9 @@ function getPrice(rule){
 		case "huobi":
 			if (rule.coinName=="btc") {
 				getHBPrice(rule);	
-			} 
+			} else if(rule.coinName=="ltc"){
+				getHBLtcPrice(rule);
+			}
 			break;
 		case "fxbtc":
 			if (rule.coinName=="btc") {

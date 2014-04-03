@@ -106,6 +106,27 @@ function getHBPrice(rule){
   xhr.send(); 
 }
 
+function getHBLtcPrice(rule){
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "https://market.huobi.com/staticmarket/detail_ltc.html", true);
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState == 4) {
+      //console.log("huobi:"+xhr.responseText);
+      var jsonStr=xhr.responseText.substring(12,xhr.responseText.length-1);
+      //console.log("after:"+jsonStr);
+      // JSON.parse does not evaluate the attacker's scripts.
+      var resp = JSON.parse(jsonStr);
+      var price = parseFloat(resp.trades[0].price);
+      badgeDisplay("ltc", "huobi", price);
+      if (rule)
+      	showNotice(price, rule);
+      else
+      	$("#huobi_ltc").html("￥"+price);
+    }
+  }
+  xhr.send(); 
+}
+
 function getFxbtcPrice(rule){
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "https://data.fxbtc.com/api?op=query_ticker&symbol=btc_cny", true);

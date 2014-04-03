@@ -68,7 +68,7 @@ $(document).ready(function(){
   /********BTC Price********/
   //getMTPrice();
   getBtcPrice("https://www.bitstamp.net/api/ticker/","bitstamp");
-  getBtcPrice("https://data.btcchina.com/data/ticker","btcchina");
+  getBtcPrice("https://data.btcchina.com/data/ticker?market=btccny","btcchina");
   getBtcPrice("https://www.okcoin.com/api/ticker.do","okcoin");
   getBtcPrice("http://www.btctrade.com/api/ticker","btctrade");
  // getBtcPrice("http://www.btcclubs.com/api/ticker","btctrade");
@@ -77,7 +77,9 @@ $(document).ready(function(){
   //get796Price();
   getFxbtcPrice();
   /********LTC Price********/
+  getLtcPrice("https://data.btcchina.com/data/ticker?market=ltccny","btcchina");
   getLtcPrice("https://www.okcoin.com/api/ticker.do?symbol=ltc_cny","okcoin");
+  getHBLtcPrice();
   getFxbtcLtcPrice();
   getBtc38AltPrice("ltc");
   getLtcPrice("https://bter.com/api/1/ticker/ltc_cny","bter");
