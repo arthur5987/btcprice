@@ -134,6 +134,16 @@ function dispSaveOptions(){
 			localStorage["altDispArr"] = JSON.stringify(selectedAlt);
 			//console.log(localStorage["altDispArr"]);		
 		}
+		//颜色设置
+		if($('input[name=color]:checked').val()=="1"){
+			localStorage["upColor"]="red";
+			localStorage["downColor"]="green";
+		}
+		else{
+			localStorage["upColor"]="green";
+			localStorage["downColor"]="red";
+		}
+		localStorage["badgeCoin"]=$('input[name=q12_3]:checked').val()
 		$("#dispStatus").html("<div class='alert alert-success'>"+
 			" 保存成功.</div>");
 		setTimeout(function() {

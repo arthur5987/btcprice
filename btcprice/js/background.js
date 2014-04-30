@@ -24,6 +24,10 @@ if (!localStorage["badgeCoin"]) {
 	localStorage["badgeCoin"] = "btc";
 	localStorage["badgePlat"] = "okcoin";
 }
+if (!localStorage["upColor"]) {
+	localStorage["upColor"] = "red";
+	localStorage["downColor"] = "green";
+}
 
 //首次检查价格提醒
 if (localStorage["priceNotification"]){
@@ -48,7 +52,7 @@ setInterval(function () {
 	}
 	badgeRule = {"coinName":localStorage["badgeCoin"], "platform":localStorage["badgePlat"], "onPrice":"1000000", "belowPrice":"0"};
 	getPrice(badgeRule);
-}, 40*1000);
+}, 10*1000);
 
 function getPrice(rule){
 	switch(rule.platform){

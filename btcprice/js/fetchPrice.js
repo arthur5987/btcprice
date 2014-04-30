@@ -23,12 +23,11 @@ function getBtcPrice(url, plat, rule){
 
 function badgeDisplay(coinName, plat, price){
 	if (coinName == localStorage["badgeCoin"] && plat == localStorage["badgePlat"]) {
-	      	//console.log(localStorage["badgePrice"]+">"+price);
-	      	//console.log(localStorage["badgePrice"] > price);
+          //设置角标颜色
 	      	if (localStorage["badgePrice"] && localStorage["badgePrice"] > price)
-	      		chrome.browserAction.setBadgeBackgroundColor({color: [0, 255, 0, 255]});
+	      		chrome.browserAction.setBadgeBackgroundColor({color: getBadgeColor(localStorage["downColor"])});
 	      	else
-	      		chrome.browserAction.setBadgeBackgroundColor({color: [255, 0, 0, 255]});
+	      		chrome.browserAction.setBadgeBackgroundColor({color: getBadgeColor(localStorage["upColor"])});
 	        chrome.browserAction.setBadgeText({text: ""+price});
           var moneySymbol = "￥";
           if (plat == "796" || plat == "bitstamp")
@@ -36,6 +35,15 @@ function badgeDisplay(coinName, plat, price){
           chrome.browserAction.setTitle({'title': coinNameInfo[coinName]+": "+moneySymbol+price});
 	        localStorage["badgePrice"] = price;
 	}
+}
+
+function getBadgeColor(color){
+  if(color == "red"){
+    return [255, 0, 0, 255];
+  } 
+  if(color == "green"){
+    return [0, 255, 0, 255];
+  } 
 }
 
 function showNotice(price, rule){
