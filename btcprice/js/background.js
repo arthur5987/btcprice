@@ -52,7 +52,7 @@ setInterval(function () {
 	}
 	badgeRule = {"coinName":localStorage["badgeCoin"], "platform":localStorage["badgePlat"], "onPrice":"1000000", "belowPrice":"0"};
 	getPrice(badgeRule);
-}, 10*1000);
+}, 40*1000);
 
 function getPrice(rule){
 	switch(rule.platform){

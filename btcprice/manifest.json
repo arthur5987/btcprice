@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "比特币行情",
   "description": "查询比特币莱特币和其他虚拟货币实时价格的小工具.",
-  "version": "2.8",
+  "version": "2.9",
   "icons": {
             "48": "img/icon48.png",
             "128": "img/icon.png" 

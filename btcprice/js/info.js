@@ -1,5 +1,5 @@
 BASINFO = {
-	VERSION:"2.8",
+	VERSION:"2.9",
 	VERSIONINFO:""
 }
 
@@ -23,6 +23,7 @@ var coinNameInfo = {
 	"tmc":"时代币",
 	"bqc":"烧烤币",
 	"btb":"比特金",
+	"bil":"比利币",
 	"cmc":"宇宙币",
 	"cnc":"中国币",
 	"dtc":"数据币",
@@ -82,6 +83,7 @@ var relationInfo={
 	"tmc":["btc38"],
 	"bqc":["bter"],
 	"btb":["bter"],
+	"bil":["btc38"],
 	"cmc":["bter"],
 	"cnc":["bter"],
 	"dtc":["bter"],

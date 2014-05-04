@@ -52,10 +52,10 @@ function showNotice(price, rule){
 	if (price>onPrice||price<belowPrice) {
 		var icon, curPrice;
 		if (price > onPrice) {
-			icon = "img/uparrow.png";
+			icon = "img/"+localStorage["upColor"]+"_up.png";
 			curPrice = onPrice;
 		} else{
-			icon = "img/downarrow.png";
+			icon = "img/"+localStorage["downColor"]+"_down.png";
 			curPrice = belowPrice;
 		}
   		var time = new Date().valueOf();

@@ -237,4 +237,11 @@ $(document).ready(function(){
 	$("#altSelection").html(altStr);
 	
 	initBadgeDisp();
+
+	if (localStorage['upColor']=="red") {
+		$("#color1").prop("checked", true);
+	}
+	else{
+		$("#color2").prop("checked", true);
+	}
 });
