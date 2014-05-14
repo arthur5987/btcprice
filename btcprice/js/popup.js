@@ -75,12 +75,10 @@ $(document).ready(function(){
   getBtcPrice("http://api.796.com/v3/futures/ticker.html?type=weekly","796");
   getHBPrice();
   //get796Price();
-  getFxbtcPrice();
   /********LTC Price********/
   getLtcPrice("https://data.btcchina.com/data/ticker?market=ltccny","btcchina");
   getLtcPrice("https://www.okcoin.com/api/ticker.do?symbol=ltc_cny","okcoin");
   getHBLtcPrice();
-  getFxbtcLtcPrice();
   getBtc38AltPrice("ltc");
   getLtcPrice("https://bter.com/api/1/ticker/ltc_cny","bter");
   

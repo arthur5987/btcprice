@@ -135,24 +135,6 @@ function getHBLtcPrice(rule){
   xhr.send(); 
 }
 
-function getFxbtcPrice(rule){
-  var xhr = new XMLHttpRequest();
-  xhr.open("GET", "https://data.fxbtc.com/api?op=query_ticker&symbol=btc_cny", true);
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState == 4) {
-      // JSON.parse does not evaluate the attacker's scripts.
-      var resp = JSON.parse(xhr.responseText);
-      var price = parseFloat(resp.ticker.last_rate);
-      badgeDisplay("btc", "fxbtc", price);
-      if(rule)
-		showNotice(price, rule);
-      else
-      	$("#fxbtc_price").html("￥"+price);
-    }
-  }
-  xhr.send(); 
-}
-
 //LTC
 function getLtcPrice(url, plat, rule){
   var xhr = new XMLHttpRequest();
@@ -167,24 +149,6 @@ function getLtcPrice(url, plat, rule){
       	showNotice(price, rule);
       else
       	$("#"+plat+"_ltc").html("￥"+price);
-    }
-  }
-  xhr.send(); 
-}
-
-function getFxbtcLtcPrice(rule){
-  var xhr = new XMLHttpRequest();
-  xhr.open("GET", "https://data.fxbtc.com/api?op=query_ticker&symbol=ltc_cny", true);
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState == 4) {
-      // JSON.parse does not evaluate the attacker's scripts.
-      var resp = JSON.parse(xhr.responseText);
-      var price = parseFloat(resp.ticker.last_rate);
-      badgeDisplay("ltc", "fxbtc", price)
-      if(rule)
-		    showNotice(price, rule);
-      else
-      	$("#fxbtc_ltc").html("￥"+price);
     }
   }
   xhr.send(); 

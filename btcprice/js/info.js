@@ -1,5 +1,5 @@
 BASINFO = {
-	VERSION:"2.9",
+	VERSION:"3.0",
 	VERSIONINFO:""
 }
 
@@ -58,14 +58,13 @@ var platNameInfo = {
 	"okcoin":"OKCoin",
 	"btctrade":"比特币交易网",
 	"huobi":"火币网",
-	"fxbtc":"FXBTC",
 	"btc38":"比特时代",
 	"bter":"比特儿"
 }
 
 var relationInfo={
-	"btc":["bitstamp","796","btcchina","okcoin","btctrade","huobi","fxbtc"],
-	"ltc":["okcoin","fxbtc","btc38","bter"],
+	"btc":["bitstamp","796","btcchina","okcoin","btctrade","huobi"],
+	"ltc":["okcoin","btc38","bter"],
 	"xpm":["btc38","bter"],
 	"xrp":["btc38"],
 	"zcc":["btc38","bter"],

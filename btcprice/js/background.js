@@ -87,13 +87,6 @@ function getPrice(rule){
 				getHBLtcPrice(rule);
 			}
 			break;
-		case "fxbtc":
-			if (rule.coinName=="btc") {
-				getFxbtcPrice(rule);	
-			} else if(rule.coinName=="ltc"){
-				getFxbtcLtcPrice(rule);
-			}
-			break;
 		case "btctrade":
 			if (rule.coinName=="btc") {
 				getBtcPrice("http://www.btctrade.com/api/ticker",rule.platform,rule);	
